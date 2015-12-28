@@ -1,0 +1,102 @@
+
+.empty-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+.player-pane {
+    -fx-background-color: linear-gradient(#ededed 0%, #eeeeee 4%, #e9eaea 49%, #e5e5e5 59%, #cccccc 100%);
+}
+
+.menu-button2 {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    //-fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+.menu-button2 > .arrow-button {
+    -fx-padding: 0;
+}
+.menu-button2 > .arrow-button > .arrow {
+    -fx-padding: 0;
+}
+
+.menu-button2 > .label {
+	-fx-font-size: 0;
+	-fx-padding: 2;
+}
+
+.player-bottom-seperator .line {
+ 	-fx-border-style: solid;
+	-fx-border-width: 0 0 1 0; 
+	-fx-border-color : #aaa;
+}
+
+.track-label-in-player {
+	-fx-alignment: CENTER;
+	-fx-content-display: CENTER;
+	-fx-font-size: 10pt;
+    -fx-font-family: "Tahoma";
+    -fx-font-weight: 700;
+    -fx-text-fill: black;
+    -fx-opacity: 1;
+}
+
+.artist-label-in-player {
+	-fx-alignment: CENTER;
+	-fx-content-display: CENTER;
+	-fx-font-size: 8pt;
+    -fx-font-family: "Tahoma";
+    -fx-font-weight: 500;
+    -fx-text-fill: black;
+    -fx-opacity: 0.6;
+}
+
+.main-vbox-player {
+	 	//-fx-border-style: solid;
+	-fx-border-width: 0 1 0 1;
+	-fx-border-color : #ccc;
+}
+
+.timeline-start-label-player {
+	-fx-alignment: CENTER;
+	-fx-content-display: CENTER;
+	-fx-font-size: 7pt;
+    -fx-font-family: "Tahoma";
+    -fx-opacity: 0.6;
+
+}
+
+.timeline-end-label-player {
+	-fx-alignment: CENTER;
+	-fx-content-display: CENTER;
+	-fx-font-size: 7pt;
+    -fx-font-family: "Tahoma";
+    -fx-opacity: 0.6;
+}
+
+
+.timeline-slider-player .track {
+    -fx-background-color: transparent, #999;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 2 0 0 0;
+    -fx-padding:  0.35em 0  0.25em 0;
+}
+
+.timeline-slider-player .thumb {
+    -fx-background-color:  #333;
+    -fx-background-radius: 0;
+    -fx-padding:  8px 1px 0px 0;
+}
+
+.timeline-slider-player > .track {
+    -fx-background-color: linear-gradient(
+        from 0px .75em to .75em 0px,
+        repeat,
+        -fx-accent 0%,
+        -fx-accent 49%,
+        derive(-fx-accent, 30%) 50%,
+        derive(-fx-accent, 30%) 99%
+    );
+}

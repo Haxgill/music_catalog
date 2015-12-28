@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="800.0" stylesheets="@PlayerMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.playerMenu.PlayerMenuController">
+   <children>
+      <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="800.0" styleClass="player-bottom-seperator" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <HBox alignment="CENTER_LEFT" maxWidth="8000.0" prefWidth="800.0" styleClass="player-pane" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxWidth="900.0" minWidth="175.0" prefWidth="225.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <MenuButton fx:id="menuButton" graphicTextGap="0.0" layoutX="-1.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#menuButtonClickHandler" onMouseEntered="#menuButtonMouseEnteredHandler" onMouseExited="#menuButtonMouseExitHandler" prefHeight="16.0" prefWidth="23.0" styleClass="menu-button2">
+                    <items>
+                      <MenuItem fx:id="editCatalogMenuItem" mnemonicParsing="false" onAction="#editCatalogMenuItemAction" text="Редактировать каталог" />
+                      <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#exitMenuItemAction" text="Выход" />
+                    </items>
+                     <graphic>
+                        <ImageView fx:id="menuButtonImageView" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="30.0" left="2.0" />
+                     </HBox.margin>
+                  </MenuButton>
+                  <Region layoutX="-1.5" maxHeight="-Infinity" maxWidth="150.0" minHeight="-Infinity" minWidth="10.0" prefHeight="50.0" prefWidth="20.0" GridPane.columnIndex="1" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="playButton" layoutX="38.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#playButtonClickHandler" onMouseEntered="#playButtonMouseEnteredHandler" onMouseExited="#playButtonMouseExitHandler" prefHeight="40.0" prefWidth="40.0" styleClass="empty-button" GridPane.columnIndex="2" StackPane.alignment="CENTER_LEFT">
+                     <graphic>
+                        <ImageView fx:id="playButtonImageView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <StackPane.margin>
+                        <Insets left="40.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Region layoutX="-1.5" maxHeight="-Infinity" maxWidth="150.0" minHeight="-Infinity" minWidth="10.0" prefHeight="50.0" prefWidth="20.0" GridPane.columnIndex="3" HBox.hgrow="ALWAYS" StackPane.alignment="TOP_LEFT" />
+                  <Slider fx:id="volumeSlider" layoutX="-1.5" maxWidth="400.0" minWidth="80.0" prefWidth="100.0" GridPane.columnIndex="4" HBox.hgrow="ALWAYS" />
+                  <Region layoutX="-1.5" maxHeight="-Infinity" maxWidth="150.0" minHeight="-Infinity" minWidth="10.0" prefHeight="50.0" prefWidth="20.0" GridPane.columnIndex="5" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" layoutX="-1.5" maxHeight="-Infinity" maxWidth="1400.0" minHeight="-Infinity" minWidth="250.0" prefHeight="50.0" prefWidth="350.0" styleClass="main-vbox-player" GridPane.columnIndex="6" GridPane.columnSpan="2147483647" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="2147483647" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" HBox.hgrow="ALWAYS" StackPane.alignment="CENTER">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="1400.0" minHeight="-Infinity" minWidth="250.0" prefHeight="40.0" prefWidth="350.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="35.0">
+                           <children>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets left="6.0" right="5.0" top="2.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="35.0" styleClass="timeline-start-label-player" text="0:00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="27.0" />
+                                 </HBox.margin>
+                                 <VBox.margin>
+                      <Insets top="1.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+            </VBox>
+            <VBox maxHeight="-Infinity" maxWidth="1330.0" minHeight="-Infinity" minWidth="180.0" prefHeight="40.0" prefWidth="280.0" HBox.hgrow="ALWAYS">
+               <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="" maxWidth="1330.0" minWidth="180.0" prefHeight="18.0" prefWidth="280.0" styleClass="track-label-in-player" text="Take me home" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets top="8.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Tahoma" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label maxWidth="1330.0" minWidth="180.0" prefHeight="14.0" prefWidth="280.0" styleClass="artist-label-in-player" text="Smile empty soul - Voltures" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="40.0" prefWidth="35.0">
+                           <children>
+                              <ImageView fitHeight="14.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets bottom="2.0" left="3.0" right="3.0" top="2.0" />
+                                 </HBox.margin>
+                                 <VBox.margin>
+                                    <Insets left="6.0" right="6.0" top="8.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="34.0" styleClass="timeline-end-label-player" text="0:00">
+                              <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Slider maxHeight="-Infinity" maxWidth="1400.0" minHeight="-Infinity" minWidth="250.0" prefHeight="6.0" prefWidth="350.0" styleClass="timeline-slider-player" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="-1.0" top="4.0" />
+                     </VBox.margin>
+                  </Slider>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <HBox alignment="BOTTOM_RIGHT" maxWidth="900.0" minWidth="175.0" prefWidth="225.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <MenuButton fx:id="catalogMenuButton" alignment="CENTER" layoutX="-1.5" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Песни" textAlignment="CENTER" GridPane.columnIndex="8" StackPane.alignment="CENTER_RIGHT">
+                    <items>
+                      <MenuItem fx:id="TrackMenuItem" mnemonicParsing="false" onAction="#TrackMenuItemAction" text="Песни" />
+                      <MenuItem fx:id="AlbumMenuItem" mnemonicParsing="false" onAction="#AlbumMenuItemAction" text="Альбомы" />
+                        <MenuItem fx:id="ArtistMenuItem" mnemonicParsing="false" onAction="#ArtistMenuItemAction" text="Группы" />
+                    </items>
+                     <HBox.margin>
+                        <Insets bottom="2.0" right="1.0" />
+                     </HBox.margin>
+                     <StackPane.margin>
+                        <Insets top="23.0" />
+                     </StackPane.margin>
+                  </MenuButton>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

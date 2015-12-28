@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="6000.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.albumList.AlbumListController">
+  <content>
+    <AnchorPane fx:id="anchorPane" maxWidth="6000.0" minWidth="600.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <VBox alignment="TOP_CENTER" maxWidth="6000.0" minWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox fx:id="vBox" alignment="TOP_CENTER" maxWidth="900.0" minWidth="600.0" />
+               </children></VBox>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

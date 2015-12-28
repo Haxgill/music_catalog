@@ -1,0 +1,15 @@
+
+.block-name-label {
+	 -fx-background-color: linear-gradient(#fffbbb 0%, #ededed 100%);
+	-fx-border-color: #ccc;
+	-fx-border-width: 1 1 0 1;
+	-fx-font-color: #fff;
+}
+
+.table-view:focused {
+	-fx-border-color: #ccc;
+	-fx-border-width: 1;
+	-fx-padding: 0;
+	-fx-background-color: #ff0000, #transparent;
+	-fx-background-insets: 0, 1 1 1 1;
+}

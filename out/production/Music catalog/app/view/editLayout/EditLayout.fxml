@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="545.0" minWidth="840.0" prefHeight="545.0" prefWidth="840.0" stylesheets="@EditLayout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.editLayout.EditLayoutController">
+                 <children>
+      <VBox>
+         <children>
+            <HBox prefHeight="400.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="200.0">
+                     <children>
+                                       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="200.0" styleClass="block-name-label" text="Группы" textAlignment="CENTER">
+                                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="artistsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#changeArtistHandler" onMouseClicked="#changeArtistHandler" prefHeight="400.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="artistNameColumn" maxWidth="1980.0" minWidth="19.0" prefWidth="198.0" text="Название" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="345.0">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="345.0" styleClass="block-name-label" text="Альбомы" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                                       <TableView fx:id="albumsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#changeAlbumHandler" onMouseClicked="#changeAlbumHandler" prefHeight="400.0" prefWidth="345.0">
+                                           <columns>
+                                               <TableColumn fx:id="albumNameColumn" maxWidth="1500.0" minWidth="15.0" prefWidth="150.0" text="Название" />
+                                               <TableColumn fx:id="albumYearColumn" maxWidth="600.0" minWidth="6.0" prefWidth="60.0" text="Год" />
+                                               <TableColumn fx:id="albumCoverPathColumn" maxWidth="1330.0" minWidth="13.0" prefWidth="133.0" text="Обложка" />
+                                           </columns>
+                                       </TableView>
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="295.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="22.0" prefWidth="295.0" styleClass="block-name-label" text="Песни" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                                       <TableView fx:id="songsTable" prefHeight="400.0" prefWidth="295.0">
+                                           <columns>
+                                               <TableColumn fx:id="songNameColumn" maxWidth="1500.0" minWidth="15.0" prefWidth="150.0" text="Название" />
+                                               <TableColumn fx:id="songSourcePathColumn" maxWidth="1430.0" minWidth="14.0" prefWidth="143.0" text="Файл" />
+                                           </columns>
+                                       </TableView>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Pane layoutX="3.0" layoutY="422.0" prefHeight="118.0" prefWidth="834.0">
+         <children>
+            <Pane fx:id="artistPane" layoutY="5.0">
+               <children>
+                                 <Button fx:id="artistButton" layoutX="124.0" layoutY="31.0" mnemonicParsing="false" onAction="#artistButtonAction" prefHeight="25.0" text="Добавить" />
+                  <TextField fx:id="artistNameTextField" prefHeight="25.0" prefWidth="193.0" promptText="Название группы" />
+                  <Button fx:id="artistButtonCancel" layoutX="135.0" layoutY="31.0" mnemonicParsing="false" onAction="#artistButtonCancelAction" text="Отмена" visible="false" />
+                  <Button fx:id="artistButtonSave" layoutX="57.0" layoutY="31.0" mnemonicParsing="false" onAction="#artistButtonSaveAction" text="Сохранить" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="albumPane" disable="true" layoutX="200.0" layoutY="5.0">
+               <children>
+                                 <Button fx:id="albumCoverPathButton" layoutX="174.0" layoutY="32.0" mnemonicParsing="false" onAction="#albumCoverPathButtonAction" prefHeight="25.0" prefWidth="26.0" text="..." />
+                  <TextField fx:id="albumNameTextField" prefHeight="25.0" prefWidth="200.0" promptText="Название альбома" />
+                  <TextField fx:id="albumCoverPathTextField" layoutY="32.0" prefHeight="25.0" prefWidth="174.0" promptText="Обложка" />
+                  <TextField fx:id="albumYearTextField" layoutX="204.0" prefHeight="25.0" prefWidth="135.0" promptText="Год" />
+                  <Button fx:id="albumButton" layoutX="270.0" layoutY="32.0" mnemonicParsing="false" onAction="#albumButtonAction" text="Добавить" />
+                  <Button fx:id="albumButtonSave" layoutX="203.0" layoutY="32.0" mnemonicParsing="false" onAction="#albumButtonSaveAction" text="Сохранить" visible="false" />
+                  <Button fx:id="albumButtonCancel" layoutX="281.0" layoutY="32.0" mnemonicParsing="false" onAction="#albumButtonCancelAction" text="Отмена" visible="false" />
+               </children>
+            </Pane>
+            <Pane fx:id="songPane" disable="true" layoutX="544.0" layoutY="5.0">
+               <children>
+                  <TextField fx:id="songSourcePathTextField" layoutX="139.0" prefHeight="25.0" prefWidth="120.0" promptText="Исходный файл" />
+                  <Button fx:id="songSourcePathButton" layoutX="262.0" mnemonicParsing="false" onAction="#songSourcePathButtonAction" prefWidth="26.0" text="..." />
+                  <TextField fx:id="songNameTextField" layoutX="2.0" prefHeight="25.0" prefWidth="135.0" promptText="Название песни" />
+                  <Button fx:id="songButton" layoutX="220.0" layoutY="32.0" mnemonicParsing="false" onAction="#songButtonAction" text="Добавить" />
+                  <Button fx:id="songButtonSave" layoutX="153.0" layoutY="32.0" mnemonicParsing="false" onAction="#songButtonSaveAction" text="Сохранить" visible="false" />
+                  <Button fx:id="songButtonCancel" layoutX="231.0" layoutY="32.0" mnemonicParsing="false" onAction="#songButtonCancelAction" text="Отмена" visible="false" />
+               </children>
+            </Pane>
+            <Label layoutX="7.0" layoutY="65.0" textFill="RED" />
+            <Label layoutX="201.0" layoutY="65.0" textFill="RED" />
+            <Separator layoutX="195.0" orientation="VERTICAL" prefHeight="85.0" prefWidth="6.0" />
+            <Separator layoutX="541.0" orientation="VERTICAL" prefHeight="85.0" />
+            <Separator layoutX="835.0" orientation="VERTICAL" prefHeight="85.0" />
+            <Separator layoutX="-4.0" orientation="VERTICAL" prefHeight="85.0" />
+            <Separator layoutX="-3.0" layoutY="85.0" prefWidth="840.0" />
+            <Label layoutX="545.0" layoutY="63.0" textFill="RED" />
+         </children>
+      </Pane>
+      <HBox alignment="TOP_RIGHT" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+                           <Button fx:id="logOutButton" layoutX="688.0" layoutY="520.0" mnemonicParsing="false" onAction="#logOutButtonAction" text="Выйти" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" right="5.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="infoLabel" alignment="TOP_LEFT" textFill="RED" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="520.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,42 @@
+.table-view .column-header-background {
+    visibility: false;
+    -fx-max-width: 0px;
+    -fx-max-height: 0px;
+    -fx-pref-width: 0px;
+    -fx-pref-height: 0px;
+    -fx-min-width: 0px;
+    -fx-min-height: 0px;
+    -fx-border-color: #fff;
+
+}
+.table-view {
+    -fx-background-color: #fff;
+
+}
+
+.table-view:focused {
+    -fx-background-color: #fff;
+}
+
+.list-view {
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 1 0 0;
+}
+.list-view:focused {
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 1 0 0;
+}
+
+.main-pane {
+    -fx-background-color: #fff;
+}
+
+
+.centered-col {
+	-fx-alignment: CENTER;
+	-fx-content-display: CENTER;
+}
+
+.remove-column-border {
+    -fx-border-width: 1 0 1 1;
+ }
