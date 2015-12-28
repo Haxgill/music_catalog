@@ -17,15 +17,13 @@ import javafx.collections.ObservableList;
  */
 public class JDBC {
 
-    private static String urlDB = "jdbc:postgresql://127.0.0.1:5432/music_catalog";
-    private static String userNameDB = "mc_user";
-    private static String passwordDB = "qweasdzxc";
-
+    private static String urlDB = "D:\\Project\\Java\\Music catalog\\src\\app\\resources\\data\\mc.db";
+    private static Connection connection = null;
 
     public static void registerDriver() {
 
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName("org.sqlite.JDBC");
             System.out.println("Драйвер подключен");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(JDBC.class.getName()).log(Level.SEVERE, null, ex);
@@ -34,11 +32,9 @@ public class JDBC {
 
     public static ObservableList<TrackItemForTrackTable> getAllSongs() {
         ObservableList<TrackItemForTrackTable>  resultData = FXCollections.observableArrayList();
-        Connection connection = null;
+
         try {
-
-
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             Statement songsStatement = null;
@@ -91,9 +87,8 @@ public class JDBC {
 
     public static ObservableList<AlbumItem> getAllAlbums() {
         ObservableList<AlbumItem>  resultData = FXCollections.observableArrayList();
-        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             Statement albumsStatement = null;
@@ -155,11 +150,9 @@ public class JDBC {
 
     public static ObservableList<String> getAllGroups() {
         ObservableList<String>  resultData = FXCollections.observableArrayList();
-        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
-
             Statement getGroupsStatement = null;
             getGroupsStatement = connection.createStatement();
             ResultSet group = getGroupsStatement.executeQuery(
@@ -187,9 +180,8 @@ public class JDBC {
 
     public static ObservableList<AlbumItem> getAlbumsOfGroup(String groupName) {
         ObservableList<AlbumItem>  resultData = FXCollections.observableArrayList();
-        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement groupPreparedStatement = null;
@@ -254,9 +246,8 @@ public class JDBC {
 
     public static ObservableList<TrackItemForAlbumTable> getSongsOfAlbum(String albumName) {
         ObservableList<TrackItemForAlbumTable>  resultData = FXCollections.observableArrayList();
-        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement albumsPreparedStatement = null;
@@ -299,11 +290,8 @@ public class JDBC {
 
     public static boolean addGroup(String groupName) {
         Boolean result = false;
-        Connection connection = null;
         try {
-
-
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement checkPreparedStatement = null;
@@ -342,11 +330,8 @@ public class JDBC {
 
     public static boolean addAlbum(String albumName, Integer albumYear, String albumCoverPath,  String groupName) {
         Boolean result = false;
-        Connection connection = null;
         try {
-
-
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement groupPreparedStatement = null;
@@ -396,9 +381,8 @@ public class JDBC {
 
     public static boolean addSong(String songName, String songSourcePath, Time songLenght,  String albumName) {
         Boolean result = false;
-        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement albumPreparedStatement = null;
@@ -447,10 +431,9 @@ public class JDBC {
     }
 
     public static void deleteGroup(String groupName) {
-        Connection connection = null;
         try {
 
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
 
@@ -496,10 +479,9 @@ public class JDBC {
     }
 
     public static void deleteAlbum(String albumName) {
-        Connection connection = null;
         try {
 
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement albumsPreparedStatement = null;
@@ -531,10 +513,8 @@ public class JDBC {
     }
 
     public static void deleteSong(String songName) {
-        Connection connection = null;
         try {
-
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement songsPreparedStatement = null;
@@ -559,10 +539,9 @@ public class JDBC {
 
     public static boolean editGroup(String oldGroupName, String groupName) {
         Boolean result = false;
-        Connection connection = null;
         try {
 
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement checkPreparedStatement = null;
@@ -602,10 +581,9 @@ public class JDBC {
 
     public static boolean editAlbum(String oldAlbumName, String albumName, Integer albumYear, String albumCoverPath) {
         Boolean result = false;
-        Connection connection = null;
         try {
 
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement checkPreparedStatement = null;
@@ -647,10 +625,9 @@ public class JDBC {
 
     public static boolean editSong(String oldSongName, String songName, String songSourcePath,  Time songLenght) {
         Boolean result = false;
-        Connection connection = null;
         try {
 
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement checkPreparedStatement = null;
@@ -692,10 +669,8 @@ public class JDBC {
 
     public static boolean checkUser(String userName, String password) {
         Boolean result = false;
-        Connection connection = null;
         try {
-
-            connection = DriverManager.getConnection(urlDB, userNameDB, passwordDB);
+            connection = DriverManager.getConnection("jdbc:sqlite:"+urlDB);
             System.out.println("Соединение установлено");
 
             PreparedStatement checkPreparedStatement = null;

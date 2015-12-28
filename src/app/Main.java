@@ -29,7 +29,7 @@ public class Main extends Application {
         this.stage = stage;
         stage.setTitle("Music Catalog");
         generateScene();
-        com.automatedqa.testcomplete.UnitTesting.AddClasses(new Class[]{JDBCTest.class, AuthorizationLayoutControllerTest.class});
+       // com.automatedqa.testcomplete.UnitTesting.AddClasses(new Class[]{JDBCTest.class, AuthorizationLayoutControllerTest.class});
         stage.setScene(scene);
         stage.getScene().getStylesheets().add(getClass().getResource("view/Main.css").toExternalForm());
         stage.show();
